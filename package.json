@@ -1,0 +1,79 @@
+{
+  "name": "playwright-utils",
+  "version": "0.0.1",
+  "description": "Reusable utilities for Playwright test automation - page helpers, generators, string utilities, and more",
+  "author": "NSC",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./playwright": {
+      "types": "./dist/playwright/index.d.ts",
+      "import": "./dist/playwright/index.mjs",
+      "require": "./dist/playwright/index.js"
+    },
+    "./generators": {
+      "types": "./dist/generators/index.d.ts",
+      "import": "./dist/generators/index.mjs",
+      "require": "./dist/generators/index.js"
+    },
+    "./string": {
+      "types": "./dist/string/index.d.ts",
+      "import": "./dist/string/index.mjs",
+      "require": "./dist/string/index.js"
+    },
+    "./file": {
+      "types": "./dist/file/index.d.ts",
+      "import": "./dist/file/index.mjs",
+      "require": "./dist/file/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Tests not configured yet\""
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "utilities",
+    "helpers",
+    "generators",
+    "e2e"
+  ],
+  "peerDependencies": {
+    "@playwright/test": ">=1.40.0"
+  },
+  "peerDependenciesMeta": {
+    "@playwright/test": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^22.15.30",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/latiosthinh/playwright-utils.git"
+  }
+}
+
