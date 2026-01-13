@@ -1,5 +1,5 @@
 {
-  "name": "playwright-utils",
+  "name": "playwright-utils-lite",
   "version": "0.0.1",
   "description": "Reusable utilities for Playwright test automation - page helpers, generators, string utilities, and more",
   "author": "NSC",

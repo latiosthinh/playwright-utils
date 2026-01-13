@@ -1,11 +1,11 @@
-# playwright-utils
+# playwright-utils-lite
 
-A comprehensive collection of reusable utilities for Playwright test automation. This package provides both Playwright-specific helpers and framework-agnostic utilities that can be used in any Node.js project.
+Reusable utilities for Playwright test automation - page helpers, generators, string utilities, and more.
 
 ## Installation
 
 ```bash
-npm install playwright-utils
+npm install playwright-utils-lite
 ```
 
 **Note:** `@playwright/test` is a peer dependency and must be installed separately if you want to use the Playwright helpers.
@@ -25,13 +25,13 @@ npm install @playwright/test
 
 ```typescript
 // Import everything
-import { PageHelpers, generatePassword, normalize } from 'playwright-utils';
+import { PageHelpers, generatePassword, normalize } from 'playwright-utils-lite';
 
 // Or import specific modules
-import { PageHelpers, WaitHelpers } from 'playwright-utils/playwright';
-import { generateEmail, generatePhone } from 'playwright-utils/generators';
-import { stripHtml, escapeRegex } from 'playwright-utils/string';
-import { readCSV, waitForDownload } from 'playwright-utils/file';
+import { PageHelpers, WaitHelpers } from 'playwright-utils-lite/playwright';
+import { generateEmail, generatePhone } from 'playwright-utils-lite/generators';
+import { stripHtml, escapeRegex } from 'playwright-utils-lite/string';
+import { readCSV, waitForDownload } from 'playwright-utils-lite/file';
 ```
 
 ## Usage Examples
@@ -41,7 +41,7 @@ import { readCSV, waitForDownload } from 'playwright-utils/file';
 #### Page Helpers
 
 ```typescript
-import { createPageHelpers } from 'playwright-utils/playwright';
+import { createPageHelpers } from 'playwright-utils-lite/playwright';
 
 test('example test', async ({ page }) => {
   const helpers = createPageHelpers(page);
@@ -66,7 +66,7 @@ test('example test', async ({ page }) => {
 #### Wait Helpers
 
 ```typescript
-import { createWaitHelpers } from 'playwright-utils/playwright';
+import { createWaitHelpers } from 'playwright-utils-lite/playwright';
 
 test('wait example', async ({ page }) => {
   const waits = createWaitHelpers(page);
@@ -92,7 +92,7 @@ test('wait example', async ({ page }) => {
 #### Scroll Helpers
 
 ```typescript
-import { createScrollHelpers } from 'playwright-utils/playwright';
+import { createScrollHelpers } from 'playwright-utils-lite/playwright';
 
 test('scroll example', async ({ page }) => {
   const scroll = createScrollHelpers(page);
@@ -117,7 +117,7 @@ test('scroll example', async ({ page }) => {
 #### Network Helpers
 
 ```typescript
-import { createNetworkHelpers } from 'playwright-utils/playwright';
+import { createNetworkHelpers } from 'playwright-utils-lite/playwright';
 
 test('network example', async ({ page, context }) => {
   const network = createNetworkHelpers(page, context);
@@ -147,7 +147,7 @@ test('network example', async ({ page, context }) => {
 #### Viewport Helpers
 
 ```typescript
-import { createViewportHelpers } from 'playwright-utils/playwright';
+import { createViewportHelpers } from 'playwright-utils-lite/playwright';
 
 test('viewport example', async ({ page }) => {
   const viewport = createViewportHelpers(page);
@@ -179,7 +179,7 @@ import {
   randomElement,
   shuffle,
   randomUUID,
-} from 'playwright-utils/generators';
+} from 'playwright-utils-lite/generators';
 
 const id = randomInt(1, 1000);           // Random integer
 const code = randomString(8);             // Random alphanumeric string
@@ -196,7 +196,7 @@ import {
   generateSecurePassword,
   generatePin,
   validatePasswordStrength,
-} from 'playwright-utils/generators';
+} from 'playwright-utils-lite/generators';
 
 // Basic password
 const password = generatePassword({ length: 12 });
@@ -219,7 +219,7 @@ import {
   generatePhone,
   formatPhone,
   isValidPhone,
-} from 'playwright-utils/generators';
+} from 'playwright-utils-lite/generators';
 
 // Generate phone number
 const phone = generatePhone({ country: 'US', format: 'dashed' });
@@ -240,7 +240,7 @@ import {
   generateEmail,
   generateTimestampedEmail,
   generateProfessionalEmail,
-} from 'playwright-utils/generators';
+} from 'playwright-utils-lite/generators';
 
 // Basic email with timestamp
 const email = generateEmail({
@@ -264,7 +264,7 @@ import {
   generateFullAddress,
   generateStreetAddress,
   generatePostalCode,
-} from 'playwright-utils/generators';
+} from 'playwright-utils-lite/generators';
 
 // Full address
 const address = generateFullAddress({ country: 'US', includeApt: true });
@@ -290,7 +290,7 @@ import {
   generateCardNumber,
   isValidCardNumber,
   getTestCardNumber,
-} from 'playwright-utils/generators';
+} from 'playwright-utils-lite/generators';
 
 // Generate complete card
 const card = generateCard({ type: 'visa' });
@@ -319,7 +319,7 @@ import {
   futureDate,
   randomBirthDate,
   diffInBusinessDays,
-} from 'playwright-utils/generators';
+} from 'playwright-utils-lite/generators';
 
 // Format date
 const formatted = formatDate(new Date(), 'MM/DD/YYYY');
@@ -363,7 +363,7 @@ import {
   truncate,
   capitalize,
   mask,
-} from 'playwright-utils/string';
+} from 'playwright-utils-lite/string';
 
 // Normalize
 const clean = normalizeWhitespace('  hello   world  '); // "hello world"
@@ -397,7 +397,7 @@ import {
   waitForDownload,
   fileExists,
   ensureDirectory,
-} from 'playwright-utils/file';
+} from 'playwright-utils-lite/file';
 
 // Read CSV
 const data = await readCSV<{ name: string; email: string }>('users.csv');
@@ -431,7 +431,7 @@ ensureDirectory('output/reports');
 ## Module Structure
 
 ```
-playwright-utils
+playwright-utils-lite
 ├── /playwright      # Playwright-specific helpers (peer dep)
 │   ├── PageHelpers
 │   ├── WaitHelpers
@@ -472,7 +472,7 @@ import type {
   ClickOptions,
   WaitOptions,
   // ... and more
-} from 'playwright-utils';
+} from 'playwright-utils-lite';
 ```
 
 ## API Reference
